@@ -2,13 +2,18 @@
 #include <stdlib.h>
 #include <locale.h>
 
+//TDE de Linguagem de ProgramaÃ§Ã£o e Startups.
+//Alunos : Diego Paim, Klayvert Nathiel, Kaique PaixÃ£o, Fred Borges, Manoel Nascimento.
+//Codigo com o objetivo de Gerenciar uma fila de Hospital com 50 vagas.
+//Caso tenha algum erro o VsCode as vezes buga e troca os caracteres especiais (alguns simbolos e letras com acento);
+
 int vagas[50] = {0}; 
 
 void exibirVagas() {
     int n = 0;
     for (int i = 0; i < 10; i++) {
         for (int j = 0; j < 5; j++) {
-            printf("%d° = %d  ", n + 1, vagas[n]);
+            printf("%dï¿½ = %d  ", n + 1, vagas[n]);
             n++;
         }
         printf("\n");
@@ -17,7 +22,7 @@ void exibirVagas() {
 
 void cadastrarVaga() {
     int caso;
-    printf("Qual o caso da vaga você quer cadastrar? ");
+    printf("Qual o caso da vaga vocï¿½ quer cadastrar? ");
     printf("\n[1] Urgente\n[2] Emergente\n");
     scanf("%d", &caso);
 
@@ -32,7 +37,7 @@ void cadastrarVaga() {
     }
 
     if (!cadastrou) {
-        printf("N?o há vagas disponíveis.\n");
+        printf("N?o hï¿½ vagas disponï¿½veis.\n");
         return;
     }
 
@@ -64,18 +69,18 @@ void cadastrarVaga() {
         vagas[i] = 0;
     }
 
-    printf("Vagas ordenadas com sucesso (ocupadas no início).\n");
+    printf("Vagas ordenadas com sucesso (ocupadas no inï¿½cio).\n");
 }
 
 
 
 void liberarVaga() {
     int nv;
-    printf("Qual vaga você quer liberar? ");
+    printf("Qual vaga vocï¿½ quer liberar? ");
     scanf("%d", &nv);
 
     if (nv < 1 || nv > 50) {
-        printf("Número de vaga inválido.\n");
+        printf("Nï¿½mero de vaga invï¿½lido.\n");
         return;
     }
 
@@ -83,7 +88,7 @@ void liberarVaga() {
         vagas[nv - 1] = 0;
         printf("Vaga liberada com sucesso.\n");
     } else {
-        printf("A vaga já está livre.\n");
+        printf("A vaga jï¿½ estï¿½ livre.\n");
     }
 }
 
@@ -125,7 +130,7 @@ int main() {
                 contarVagas();
                 break;
             default:
-                printf("Opç?o inválida.\n");
+                printf("Opï¿½?o invï¿½lida.\n");
         }
 
         system("pause");
